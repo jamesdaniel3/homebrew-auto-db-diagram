@@ -2,7 +2,7 @@ class DbDiagram < Formula
     desc "A command-line tool that allows for connecting to and automatically diagramming SQL database instances"
     homepage "https://github.com/jamesdaniel3/auto-db-diagram"
     url "https://github.com/jamesdaniel3/auto-db-diagram/archive/v1.0.0.tar.gz"
-    sha256 "4af9bb8cd63b5e9226c133301a74406ba9369c1a1b76292fbf33d35c2def56c4"
+    sha256 "a092305b924cef86a44e671c23061f32d03d797e29d859e72f6ce8c285f32eb6"
     license "MIT"
     
     depends_on "jq"
