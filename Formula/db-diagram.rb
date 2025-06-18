@@ -18,6 +18,6 @@ class DbDiagram < Formula
     EOS
 
     # install manpage from libexec
-    (man1/"db-diagram.1").install libexec/"db-diagram.1"
+    man1.install libexec/"db-diagram.1"
   end
 end
