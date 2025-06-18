@@ -17,9 +17,18 @@ class DbDiagram < Formula
       exec "#{libexec}/main.sh" "$@"
     EOS
 
-    # install manpage 
-    if File.exist?("#{buildpath}/db-diagram.1")
-      man1.install "#{buildpath}/db-diagram.1"
+    # Debug: List files in buildpath to see what's available
+    puts "Files in buildpath: #{Dir.glob("#{buildpath}/*")}"
+    
+    # Install manpage with more explicit path checking
+    manpage_path = "#{buildpath}/db-diagram.1"
+    if File.exist?(manpage_path)
+      puts "Found manpage at: #{manpage_path}"
+      man1.install manpage_path
+      puts "Installed manpage to: #{man1}"
+    else
+      puts "Manpage not found at: #{manpage_path}"
+      puts "Available files: #{Dir.glob("#{buildpath}/*.1")}"
     end
   end
 end
