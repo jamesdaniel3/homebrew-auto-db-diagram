@@ -11,13 +11,15 @@ class DbDiagram < Formula
   depends_on "python@3.11"
   
   def install
-    libexec.install Dir["*"]
+    # Install everything except the man page to libexec
+    libexec.install Dir["*"] - ["db-diagram.1"]
+    
     (bin/"db-diagram").write <<~EOS
       #!/bin/bash
       exec "#{libexec}/main.sh" "$@"
     EOS
-
-    # install manpage from libexec
-    man1.install "#{libexec}/db-diagram.1"
+  
+    # Install the man page directly from source
+    man1.install "db-diagram.1"
   end
 end
